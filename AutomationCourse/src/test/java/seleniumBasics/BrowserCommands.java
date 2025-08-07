@@ -9,9 +9,11 @@ public class BrowserCommands extends Base{
 		String url=driver.getCurrentUrl();
 		System.out.println(url);
 		String handleId=driver.getWindowHandle();//to get current window handle id(single window)
+//		driver.getWindowHandles()//multiple windows
 		System.out.println(handleId);
 		String pageSource=driver.getPageSource();
 		System.out.println(pageSource);
+		
 		
 	}
 	
@@ -28,7 +30,7 @@ public class BrowserCommands extends Base{
 		// TODO Auto-generated method stub
 BrowserCommands browser=new BrowserCommands();
 browser.initializeBrowser();
-//browser.handlingBrowserCommands();
+browser.handlingBrowserCommands();
 browser.navigationCommands();
 	}
 

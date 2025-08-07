@@ -17,8 +17,8 @@ public class Base {
 			
 		
 //			driver=new FirefoxDriver();
-//			driver=new ChromeDriver();//open browser
-		driver=new EdgeDriver();
+			driver=new ChromeDriver();//open browser
+//		driver=new EdgeDriver();
 //			driver.get("https://selenium.qabible.in/");//open url
 			driver.get("https://selenium.qabible.in/");
 			
@@ -27,7 +27,7 @@ public class Base {
 	
 	public void closeandquit()//close all the browsers
 	{
-		//driver.close();//closes single browser
+		//driver.close();//# Close the last opened tab
 		//driver.quit();//close more than one browsers
 		
 	}
