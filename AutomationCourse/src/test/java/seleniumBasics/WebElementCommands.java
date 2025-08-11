@@ -15,7 +15,10 @@ public class WebElementCommands extends Base {
 		//click()
 
 		WebElement bttn=driver.findElement(By.xpath("//button[@id='button-one']"));
+		System.out.println(bttn.isEnabled());
+		
 		bttn.click();
+		System.out.println(bttn.isDisplayed());
 		
 		WebElement txt=driver.findElement(By.xpath("//div[@id='message-one']"));
 		System.out.println(txt.getText());
