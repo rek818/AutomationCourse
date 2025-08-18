@@ -25,15 +25,29 @@ public class HandlingAlert extends Base {
 		//alert.accept();
 		alert.dismiss();
 		
+		
 	}
 
+	public void verifyPromptAlert()
+	{
+		driver.navigate().to("https://demoqa.com/alerts");
+		WebElement prompt=driver.findElement(By.id("promtButton"));
+		prompt.click();
+		Alert alert=driver.switchTo().alert();
+		alert.sendKeys("Rekha");
+		alert.accept();
+
+		
+		
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 		HandlingAlert al=new HandlingAlert();
 		al.initializeBrowser();
 	//	al.verifySimpleAlert();
-		al.verifyConfirmAlert();
+		//al.verifyConfirmAlert();
+		al.verifyPromptAlert();
 	}
 
 }
