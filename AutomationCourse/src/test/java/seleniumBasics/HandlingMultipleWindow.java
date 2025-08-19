@@ -16,7 +16,7 @@ public class HandlingMultipleWindow extends Base {
 		
 		WebElement clickHere=driver.findElement(By.xpath("//a[text()='Click Here']"));
 		clickHere.click();
-		
+				
 		Set<String> handleIds=driver.getWindowHandles();
 		System.out.println(handleIds);
 		
