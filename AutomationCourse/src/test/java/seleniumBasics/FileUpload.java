@@ -14,8 +14,8 @@ public class FileUpload extends Base {
 	public void fileUploadUsingSendKeys()
 	{
 		driver.navigate().to("https://demo.guru99.com/test/upload/");
-		WebElement file=driver.findElement(By.id("uploadfile_0"));
-		file.sendKeys("C:\\Users\\USER\\git\\AutomationCourse\\AutomationCourse\\src\\test\\resources\\notes.pdf");
+		WebElement chooseFile=driver.findElement(By.id("uploadfile_0"));
+		chooseFile.sendKeys("C:\\Users\\USER\\git\\AutomationCourse\\AutomationCourse\\src\\test\\resources\\notes.pdf");
 		WebElement checkBox=driver.findElement(By.id("terms"));
 		checkBox.click();
 		WebElement bttn=driver.findElement(By.id("submitbutton"));
@@ -31,7 +31,7 @@ public class FileUpload extends Base {
 		//create object for StringSelection class and provide the file path as argument
 		StringSelection s=new StringSelection("C:\\Users\\USER\\git\\AutomationCourse\\AutomationCourse\\src\\test\\resources\\notes.pdf");
 		
-		//Toolkit class is called to get the copied content from clipboard
+		//Toolkit class is called to get the copied content from clipboard,give null for non onswership file
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(s, null);
 		
 		//obj for Robot class
@@ -39,17 +39,21 @@ public class FileUpload extends Base {
 		
 		// set waiting time(ms)
 		
-		robot.delay(2500);
+		robot.delay(5500);
 		
 		//first click enter then release->ctrl+v->release->enter ->release --to paste the path
 		robot.keyPress (KeyEvent.VK_ENTER);
 		robot.keyRelease (KeyEvent.VK_ENTER);
+		robot.delay(5500);
 		robot.keyPress (KeyEvent.VK_CONTROL);
 		robot.keyPress (KeyEvent.VK_V);
+		robot.delay(5500);
 		robot.keyRelease(KeyEvent.VK_CONTROL);
 		robot.keyRelease(KeyEvent.VK_V);
+		robot.delay(5500);
 		robot.keyPress (KeyEvent.VK_ENTER);
 		robot.keyRelease(KeyEvent.VK_ENTER);
+		robot.delay(5500);
 	}
 
 	public static void main(String[] args) {
