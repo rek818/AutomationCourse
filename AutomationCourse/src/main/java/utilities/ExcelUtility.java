@@ -16,21 +16,21 @@ public class ExcelUtility {
 		static XSSFWorkbook wb;
 		static XSSFSheet sh;
 
-		public static String getStringData(int a,int b) throws 
+		public static String getStringData(int a,int b,String sheet) throws 
 	IOException
 		{
-			f=new FileInputStream("C:\\Users\\USER\\OneDrive\\ドキュメント\\ExcelJava.xlsx");
+			f=new FileInputStream("C:\\Users\\USER\\git\\AutomationCourse\\AutomationCourse\\src\\test\\resources\\TestData.xlsx");
 			wb= new XSSFWorkbook(f);//to get values from workbook present inside file
-			sh=wb.getSheet("sheet1");//to get values from sheet
+			sh=wb.getSheet(sheet);//to get values from sheet
 			XSSFRow r =sh.getRow(a);
 			XSSFCell c = r.getCell(b);
 			return c.getStringCellValue();//to get string value
 		}
-		public static String getIntegerData (int a,int b )throws IOException
+		public static String getIntegerData (int a,int b ,String sheet)throws IOException
 		{
-			f=new FileInputStream("C:\\Users\\USER\\OneDrive\\ドキュメント\\ExcelJava.xlsx");
+			f=new FileInputStream("C:\\Users\\USER\\git\\AutomationCourse\\AutomationCourse\\src\\test\\resources\\TestData.xlsx");
 			wb= new XSSFWorkbook(f);//to get values from workbook present inside file
-			sh=wb.getSheet("sheet1");//to get values from sheet
+			sh=wb.getSheet(sheet);//to get values from sheet
 			XSSFRow r =sh.getRow(a);
 			XSSFCell c = r.getCell(b);
 			int s=(int)c.getNumericCellValue();//to get string value
@@ -38,11 +38,11 @@ public class ExcelUtility {
 			
 			 
 		}
-		public static String getFloatData (int a,int b )throws IOException
+		public static String getFloatData (int a,int b ,String sheet)throws IOException
 		{
-			f=new FileInputStream("C:\\Users\\USER\\OneDrive\\ドキュメント\\ExcelJava.xlsx");
+			f=new FileInputStream("C:\\Users\\USER\\git\\AutomationCourse\\AutomationCourse\\src\\test\\resources\\TestData.xlsx");
 			wb= new XSSFWorkbook(f);//to get values from workbook present inside file
-			sh=wb.getSheet("sheet1");//to get values from sheet
+			sh=wb.getSheet(sheet);//to get values from sheet
 			XSSFRow r =sh.getRow(a);
 			XSSFCell c = r.getCell(b);
 			float m=(float)c.getNumericCellValue();//to get string value
